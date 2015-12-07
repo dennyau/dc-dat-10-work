@@ -1,0 +1,29 @@
+## Class 2 Homework Submission: Dennis Yau
+
+#### Command Line Tasks
+
+##### (My) Answers
+
+1. order_id is a unique identifier, possibly from an order application log.  quantity is the number of the item.  item_name is the public label of the item.  choice_description seems to be the specific breakdown of the item into parts. item_price is the dollar price for one quantity of the item
+2. `awk '{print $1}' chipotle.tsv  | uniq -c | wc -l` says 1835, minus the header means 1834 orders.  Also, reading says 1834 is the highest order_id.
+3. `wc -l chipotle.tsv` says 4623 lines in the file
+4. `grep "Steak Burrito" chipotle.tsv | awk '{ sum+=$2 } END { print sum; }'` shows 368 vs. `grep "Chicken Burrito" chipotle.tsv | awk '{ sum+=$2 } END { print sum; }'` which shows 591 - thus Chicken is more popular.
+5. `grep "Chicken Burrito" chipotle.tsv | grep "Black Beans" | awk '{ sum += $2 } END {print sum}'` shows 307 vs. `grep "Chicken Burrito" chipotle.tsv | grep "Pinto Beans" | awk '{ sum += $2 } END {print sum}'` shows 108 - thus Chicken Burritos more often have Black Beans.
+6. `find . -name "*.*sv*"` while in the ~/data directory
+7. `grep "dictionary" ~/data/*.*` shows 3 hits, looking at the lines there is a single instance of the word in each line - so about 3 total occurances.
+8. Who is most likely to like it hot?
+`grep Hot chipotle.tsv | awk '{print $2,"",$3}' | sort | uniq -c` shows:
+21 orders of Hot Barbacoa
+16 orders of Hot Carnitas
+115*1 + 9*2 = 133 orders of Hot Chicken
+78*1 + 4*2 = 86 orders of Hot Steak
+19 orders of Hot Veggies
+`cat chipotle.tsv | awk '{print $2,"",$3}' | sort | uniq -c | grep Chicken` shows 1474*1 + 80*2 + 4*3 + 2*4 = 1654 chicken items
+ so 133 / 1654 means about an 8% chance of a chicken eater liking it hot.
+`cat chipotle.tsv | awk '{print $3,"",$3}' | sort | uniq -c | grep Steak` shows 673*1 + 26*2 + 3*3 = 734 steak items
+so 86 / 734 means about a 12% chance of a steak eater liking it hot.
+repeating the above `cat | awk | sort | uniq` for Veggie calculates a 19/(208+3*2+1*3) = 9% chance of a vegetarian liking it hot
+again for Barbacoa ... 21/204 = 10%
+again for Carnitas ... 19/186 = 10%
+
+So, in conclusion: The Steak eaters like it hot.
