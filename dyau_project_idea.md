@@ -5,14 +5,14 @@ I am interested in determining if there is a way of predicting if an online arti
 This is interesting to me because learning to sift through the deluge of information in the modern world is rapidly becoming a required skill and determining truth in phrasing is important in both artifical intelligence as well as maximizing a person's precious time.
 
 I would like to know if:
-# There is a particular pattern used to mask clickbat - this implies that we as humans have a pre-desposition to certain communication patterns.
-# If article sources can be assigned a co-efficient, implying that we can rank article sources by "trustworthiness"
-# Which cognitive distortions/logical fallicies are most exploited in the creation of clickbait.
+1. There is a particular pattern used to mask clickbat - this implies that we as humans have a pre-desposition to certain communication patterns.
+1. If article sources can be assigned a co-efficient, implying that we can rank article sources by "trustworthiness"
+1. Which cognitive distortions/logical fallicies are most exploited in the creation of clickbait.
 
 To do this, we need three groups of data sources:
-# Truth control: This is a group of article sources that are considered to be telling the truth
-# Liar control: This is a group of articles sources that are considered to be misrepresenting the truth
-# Variable: This is the group of article sources that we will be comparing against the prior two to determine their "trustworthiness"
+1. Truth control: This is a group of article sources that are considered to be telling the truth
+1. Liar control: This is a group of articles sources that are considered to be misrepresenting the truth
+1. Variable: This is the group of article sources that we will be comparing against the prior two to determine their "trustworthiness"
 
 For the *truth control group* I intend to use articles from:
 * The New York Times (Article Search)[http://developer.nytimes.com/docs/read/article_search_api_v2] and (Most Popular Listings)[http://developer.nytimes.com/docs/most_popular_api/]
